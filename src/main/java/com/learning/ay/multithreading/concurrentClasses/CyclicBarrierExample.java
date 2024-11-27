@@ -1,4 +1,4 @@
-package com.learning.java.multithreading.concurrentClasses;
+package com.learning.ay.multithreading.concurrentClasses;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;

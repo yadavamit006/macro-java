@@ -1,4 +1,4 @@
-package com.learning.java.basic;
+package com.learning.ay.basic;
 
 public class PrePostIncrement {
     public static void main(String[] args) {

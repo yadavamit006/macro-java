@@ -1,6 +1,4 @@
-package com.learning.java.multithreading.atomicVsVolatile;
-
-import org.springframework.aop.ThrowsAdvice;
+package com.learning.ay.multithreading.atomicVsVolatile;
 
 import java.util.concurrent.atomic.AtomicInteger;
 //https://www.baeldung.com/java-volatile-vs-atomic

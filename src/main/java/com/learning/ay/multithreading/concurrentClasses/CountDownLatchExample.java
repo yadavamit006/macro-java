@@ -1,4 +1,4 @@
-package com.learning.java.multithreading.concurrentClasses;
+package com.learning.ay.multithreading.concurrentClasses;
 
 import java.util.concurrent.CountDownLatch;
 //A synchronization aid that allows one or more threads to wait until a set of operations being performed in other threads complete.
