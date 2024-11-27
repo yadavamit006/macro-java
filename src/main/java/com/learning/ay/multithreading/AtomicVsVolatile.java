@@ -1,4 +1,4 @@
-package com.learning.ay.multithreading.atomicVsVolatile;
+package com.learning.ay.multithreading;
 
 import java.util.concurrent.atomic.AtomicInteger;
 //https://www.baeldung.com/java-volatile-vs-atomic
