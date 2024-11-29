@@ -1,9 +1,0 @@
-Thread.sleep() method internally keeps checking for Interrupt status flag.
-public static void sleep(long millis) throws InterruptedException{
-    while (/* still waiting for millis to become zero */){
-        if (Thread.interrupted()){
-            throw new InterruptedException();
-        }
-        // Keep waiting
-    }
-}
