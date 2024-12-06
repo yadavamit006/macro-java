@@ -22,18 +22,17 @@ try {
 }
 ```
 Asked in one of interview
-```
-main(){
-    Thread.currentThread().wait(); //Exception : java.lang.IllegalMonitorStateException
-}
-```
+
+    main(){
+        Thread.currentThread().wait(); //Exception : java.lang.IllegalMonitorStateException
+    }
+
 Def : Thrown to indicate that a thread has attempted to wait on an object's monitor or to notify other threads waiting
     on an object's monitor without owning the specified monitor.
 
 Thread can .start() only once else throws java.lang.illegalThreadStateException on second time
-
+***
 ### Executor Framework [Executor](https://medium.com/@gaurav.sahu1591/java-multi-threading-executor-framework-219260c5c4b2)
-
 Executor : You do not have to create, manage, schedule, and terminate your thread.
 Thread pool is a pool of worker threads, which is ready to perform any task given to them,
     mostly in the form of implementation of Runnable or Callable interface.
@@ -54,18 +53,28 @@ Executor framework also provides a static utility class called Executors (simila
 
 ExecutorService shutdown
 An ExecutorService can be shut down, which will cause it to reject new tasks.
+
     shutdown() ->  method will allow previously submitted tasks to execute before terminating.
     shutdownNow() -> method prevents waiting tasks from starting and attempts to stop currently executing tasks.
 
-Callable : This Interface is similar to Runnable but can return a result and throw checked exceptions.  The Callable interface is parameterized by the type of result it produces.
-            ex : public interface Callable<V>{ V call() throws Exception;}
-Future :  represents the result of an asynchronous computation and provides methods for checking if the computation is complete and retrieving the result.
+Callable : This Interface is similar to Runnable but can return a result and throw checked exceptions.  The Callable interface is parameterized by the type of result it produces. 
+
+    public interface Callable<V>{ V call() throws Exception;}
+
+Future: represents the result of an asynchronous computation and provides methods for checking if the computation is complete and retrieving the result.
+
+    cancel(boolean mayInterruptIfRunning): Attempts to cancel the execution of the task. The mayInterruptIfRunning parameter specifies whether the thread executing the task should be interrupted.
+    isCancelled(): Returns true if the task was canceled before it was completed normally.
+    isDone(): Returns true if the task is completed, either normally or by being canceled.
+    get(): Waits if necessary for the computation to complete, and then retrieves its result.
+    get(long timeout, TimeUnit unit): Waits if necessary for at most the given time for the computation to complete, and then retrieves its result, if available.
 
 Limitations:
-Resource thrashing -> If the thread pool size is not tuned properly threads consume numerous resources, including memory and other system resources. While the scheduling overhead of switching between threads is small, with many threads context switching can become a significant drag on your program’s performance.
-Thread leakage :
-A significant risk in all kinds of thread pools is thread leakage, which occurs when a thread is removed from the pool to perform a task, but is not returned to the pool when the task completes.
-One way this happens is when the task throws a RuntimeException or an Error. If the pool class does not catch these, then the thread will simply exit and the size of the thread pool will be permanently reduced by one.
-When this happens enough times, the thread pool will eventually be empty, and the system will stall because no threads are available to process tasks.
+
+    Resource thrashing : If the thread pool size is not tuned properly threads consume numerous resources, including memory and other system resources. While the scheduling overhead of switching between threads is small, with many threads context switching can become a significant drag on your program’s performance.
+    
+    Thread leakage : A significant risk in all kinds of thread pools is thread leakage, which occurs when a thread is removed from the pool to perform a task, but is not returned to the pool when the task completes.
+    One way this happens is when the task throws a RuntimeException or an Error. If the pool class does not catch these, then the thread will simply exit and the size of the thread pool will be permanently reduced by one.
+    When this happens enough times, the thread pool will eventually be empty, and the system will stall because no threads are available to process tasks.
 
 
