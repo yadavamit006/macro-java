@@ -81,3 +81,6 @@ Limitations:
     Thread leakage : A significant risk in all kinds of thread pools is thread leakage, which occurs when a thread is removed from the pool to perform a task, but is not returned to the pool when the task completes.
     One way this happens is when the task throws a RuntimeException or an Error. If the pool class does not catch these, then the thread will simply exit and the size of the thread pool will be permanently reduced by one.
     When this happens enough times, the thread pool will eventually be empty, and the system will stall because no threads are available to process tasks.
+***
+
+**ThreadLocal** construct allows us to store data that will be accessible only by a specific thread.
