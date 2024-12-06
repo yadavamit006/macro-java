@@ -1,6 +1,6 @@
 [Readme learning page](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#styling-text)
 
-__Thread.sleep()__ method internally keeps checking for Interrupt status flag.
+**Thread.sleep()** method internally keeps checking for Interrupt status flag.
 ```
 public static void sleep(long millis) throws InterruptedException{
     while (/* still waiting for millis to become zero */){
@@ -10,7 +10,7 @@ public static void sleep(long millis) throws InterruptedException{
     }
 }
 ```
-__Note__ : Thread.interrupted() not only returns the flag but also sets it to false. Thus, once InterruptedException is
+**Note** : Thread.interrupted() not only returns the flag but also sets it to false. Thus, once InterruptedException is
     thrown, the flag is reset. The parent thread no longer knows anything about the interruption request sent by the owner.
 Improved code:
 ```
@@ -42,7 +42,7 @@ Executor framework also provides a static utility class called Executors (simila
     cached thread pool and scheduled thread pool
 
 1. newSingleThreadExecutor() : Creates an Executor that uses a single worker thread.
-   `ExecutorService executor = Executors.newSingleThreadExecutor();`
+    `ExecutorService executor = Executors.newSingleThreadExecutor();`
 2. static ExecutorService newFixedThreadPool(int numThreads) : Creates a thread pool that reuses a fixed number of threads.
    `ExecutorService fixedPool = Executors.newFixedThreadPool(2);`
 3. static ExecutorService newCachedThreadPool() : Creates a thread pool that creates new threads as needed,
@@ -54,10 +54,15 @@ Executor framework also provides a static utility class called Executors (simila
 ExecutorService shutdown
 An ExecutorService can be shut down, which will cause it to reject new tasks.
 
-    shutdown() ->  method will allow previously submitted tasks to execute before terminating.
-    shutdownNow() -> method prevents waiting tasks from starting and attempts to stop currently executing tasks.
+1. shutdown() : method will allow previously submitted tasks to execute before terminating.
+2. shutdownNow(): Attempts to stop all actively executing tasks, halts the processing of waiting tasks, and returns a list of the tasks that were awaiting execution.
+    Ex : List<Runnable> pendingTasks = executor.shutdownNow();
+3. awaitTermination(long timeout, TimeUnit unit): Blocks until all tasks have completed execution after a shutdown request, or the timeout occurs, or the current thread is interrupted, whichever happens first.
+   Ex: boolean terminated = executor.awaitTermination(10, TimeUnit.SECONDS);
+        if (terminated) {syso("All tasks have completed execution");} 
+        else {syso("Timeout occurred before all tasks completed");}
 
-Callable : This Interface is similar to Runnable but can return a result and throw checked exceptions.  The Callable interface is parameterized by the type of result it produces. 
+Callable : This Interface is similar to Runnable but can return a result and throw checked exceptions. The Callable interface is parameterized by the type of result it produces. 
 
     public interface Callable<V>{ V call() throws Exception;}
 
@@ -76,5 +81,3 @@ Limitations:
     Thread leakage : A significant risk in all kinds of thread pools is thread leakage, which occurs when a thread is removed from the pool to perform a task, but is not returned to the pool when the task completes.
     One way this happens is when the task throws a RuntimeException or an Error. If the pool class does not catch these, then the thread will simply exit and the size of the thread pool will be permanently reduced by one.
     When this happens enough times, the thread pool will eventually be empty, and the system will stall because no threads are available to process tasks.
-
-
