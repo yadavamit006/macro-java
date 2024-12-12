@@ -17,7 +17,7 @@ public class EnumSample {
 
 
 enum PaymentMethod {
-    CREDIT_CARD("CC", "Credit Card") {
+    CREDIT_CARD("CC", "Credit Card") { //Constants with Associated Fields(name & Desc)
         @Override
         public double calculateFees(double amount) {
             return amount * 3;
@@ -32,12 +32,12 @@ enum PaymentMethod {
     private final String code;
     private final String description;
 
-    PaymentMethod(String code, String description) {
+    PaymentMethod(String code, String description) {//Private constructor only
         this.code = code;
         this.description = description;
     }
 
-    public abstract double calculateFees(double amount);
+    public abstract double calculateFees(double amount); //Abstract Method
 
     public String getCode() {
         return this.code;
@@ -47,15 +47,15 @@ enum PaymentMethod {
         return this.description;
     }
 
-    private static final Map<String, PaymentMethod> BY_CODE = new HashMap<>();
+    private static final Map<String, PaymentMethod> BY_CODE = new HashMap<>(); //static Map for look-up
 
     static {
-        for (PaymentMethod value : PaymentMethod.values()) {
+        for (PaymentMethod value : PaymentMethod.values()) { //values() to iterate through all constants
             BY_CODE.put(value.getCode(), value);
         }
     }
 
-    public static PaymentMethod fromCode(String code) {
+    public static PaymentMethod fromCode(String code) { //Custom method
         return BY_CODE.get(code);
     }
 }
