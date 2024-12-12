@@ -12,10 +12,11 @@ public class EnumSample {
 
         PaymentMethod fetchMethod = PaymentMethod.fromCode("CC");
         System.out.println("Fetched Method : "+fetchMethod);
+        //Saved some changes in local now moving to other branch
     }
 }
 
-
+//Extend java.lang.enum cant extend any other class. however can implement interface
 enum PaymentMethod {
     CREDIT_CARD("CC", "Credit Card") { //Constants with Associated Fields(name & Desc)
         @Override
@@ -50,7 +51,7 @@ enum PaymentMethod {
     private static final Map<String, PaymentMethod> BY_CODE = new HashMap<>(); //static Map for look-up
 
     static {
-        for (PaymentMethod value : PaymentMethod.values()) { //values() to iterate through all constants
+        for (PaymentMethod value : PaymentMethod.values()) { //values() : return array of all enum constants
             BY_CODE.put(value.getCode(), value);
         }
     }
