@@ -9,6 +9,9 @@ public class EnumSample {
         for (PaymentMethod value : PaymentMethod.values()) {
             System.out.println("Payment Method " + value.getCode() + "-" + value.getDescription() + ", calculateFees " + value.calculateFees(100));
         }
+
+        PaymentMethod fetchMethod = PaymentMethod.fromCode("CC");
+        System.out.println("Fetched Method : "+fetchMethod);
     }
 }
 
@@ -52,7 +55,7 @@ enum PaymentMethod {
         }
     }
 
-    public static PaymentMethod fetchPaymentByCode(String code) {
+    public static PaymentMethod fromCode(String code) {
         return BY_CODE.get(code);
     }
 }
