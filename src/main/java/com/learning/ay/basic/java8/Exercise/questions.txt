@@ -1,0 +1,39 @@
+Sort employees by their salary in descending order.
+Find the employee with the highest age.
+Check if there are any employees with a salary above 100,000.
+Get a list of employees' names only.
+Find the employee with the lowest salary.
+Check if all employees are from the same department.
+Get the department with the most employees.
+Find the youngest employee.
+Calculate the sum of salaries for employees in the IT department.
+Check if there is any employee with an age below 25.
+Find the employee with the longest name.
+Group employees by their age.
+Check if any employee has a name ending with "son".
+Find the employee with the lowest age.
+Filter employees whose salary is between 50,000 and 75,000.
+Check if there is any employee with a name longer than 10 characters.
+Find the employee with the highest salary in the HR department.
+Get a list of employees' ages only.
+Find the employee with the lowest salary in the IT department.
+Check if all employees' names start with the same letter.
+Find the department with the highest average salary.
+Get a list of employees' salaries only.
+Find the employee with the highest salary in the Sales department.
+Check if any employee has a name containing the letter "x".
+Find the department with the most employees above the age of 40.
+Get a list of employees' departments only.
+Find the employee with the lowest salary in the HR department.
+Check if all employees have a salary above 30,000.
+Find the department with the highest number of employees above the age of 50.
+Get a list of employees' names in uppercase.
+Find the employee with the highest salary in the Marketing department.
+Check if any employee has a name consisting only of digits.
+Find the department with the most employees below the age of 30.
+Get a list of employees' names in lowercase.
+Find the employee with the highest salary in the Finance department.
+Check if all employees have a name containing at least one vowel.
+Find the department with the most employees with a salary above 80,000.
+Get a list of employees' names in reverse order.
+Find the employee with the highest salary in the Engineering department.
