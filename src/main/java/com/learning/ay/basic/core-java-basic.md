@@ -203,6 +203,12 @@ finalize() : Deprecated in Java 9. Performance impact,Unpredictability for resur
 
 Copy further details via note
 
+What are the types of references and there role in Garbage collection?
+1. Strong References : Prevent garbage collection
+2. Weak References : Allow garbage collection when no strong references exist. 
+3. Soft References : Collected only when memory is low. 
+4. Phantom References : Used for post-garbage collection cleanup.
+
 ### Java Memory Module
 ![img.png](img.png)
 
@@ -213,3 +219,8 @@ Heap : The heap in Java consists of dynamically allocated memory where objects a
 The heap is divided into two main areas:
 1. Young Generation: This area is further divided into Eden space and two Survivor spaces (From and To). Objects are initially allocated in the Eden space. When the Eden space becomes full, a minor garbage collection is triggered, and surviving objects are moved to one of the Survivor spaces. Objects that survive multiple garbage collection cycles in the Survivor spaces are eventually promoted to the Old Generation.
 2. Old Generation: This area is also known as the Tenured Generation. It is used to store long-lived objects that have survived multiple garbage collection cycles in the Young Generation. Major garbage collections are performed in the Old Generation to reclaim memory from unreachable objects.
+
+What happens in memory when use 'new' keyword?
+1. Heap : The object is created in the heap. 
+2. Stack : A reference to the object is stored in the stack. 
+3. Constructor : Initializes the object when created. The Constructor assigns values to instance variables and performs any required setup.
