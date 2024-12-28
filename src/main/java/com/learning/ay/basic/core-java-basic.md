@@ -1,3 +1,28 @@
+**Primitive to object and wise versa**
+
+      Integer i = Integer.valueOf(2) : Convert Primitive to Object
+      int j = i.intValue() : Convert Object to Primitive
+
+**Overriding/Overloading Rules** [Other links](https://www.java67.com/2012/09/what-is-rules-of-overloading-and-overriding-in-java.html)
+
+Overriding:
+1. Location: A method can only be overridden in sub-class, not in the same class. If you try to create two methods with the same signature in one class compiler will complain about it saying "duplicate method in type Class"
+2. Exception : if an overridden method throws IOException or ClassNotfoundException, which are checked Exception then the overriding method can not throw java.lang.Exception because it comes higher in type hierarchy (it's the superclass of IOException and ClassNotFoundExcepiton).
+   1. Checked Exp is free to throw any unchecked exception. Overriding method can not throw higher exception.
+   2. If Overridden method does not throws an exception then overriding method can throw unchecked exception else compile time error
+
+3. Visibility : The overriding method can not reduce access of overridden method. It means if the overridden method is defined as public then the overriding method can not be protected or package-private.
+4. Accessibility : Overriding method can increase access of overridden method. This is the opposite of the earlier rule, according to this if the overridden method is declared as protected then the overriding method can be protected or public.
+5. Types of Methods : The private, static, and final methods can not be overridden in Java.
+6. Return Type : The return type of overriding method must be the same as overridden method. Trying to change the return type of method in the child class will throw compile-time error "return type is incompatible with parent class method"
+
+Overloading:
+1. The overloaded and overloading methods must be in the same class (Note: this includes any methods inherited, even implicitly, from a superclass).
+2. The method parameters must change: either the number or the type of parameters must be different in the two methods.
+3. The return type can be freely modified.
+4. The access modifier (public, private, and so on) can be freely modified.
+5. Thrown exceptions, if any, can be freely modified.
+
 **MethodReference**: refers method of FI. It is compact and easy form of Lambda Expression.
 1. Reference to static method
 2. Reference to instance method
@@ -224,3 +249,10 @@ What happens in memory when use 'new' keyword?
 1. Heap : The object is created in the heap. 
 2. Stack : A reference to the object is stored in the stack. 
 3. Constructor : Initializes the object when created. The Constructor assigns values to instance variables and performs any required setup.
+
+### Generics : 
+Use covariance (? extends T) when you need to read data.
+Use contravariance (? super T) when you need to write data.
+
+TypeErasure : Generic type information is lost at runtime; List < String> becomes List
+
