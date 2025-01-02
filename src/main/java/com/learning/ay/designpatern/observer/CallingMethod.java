@@ -1,4 +1,4 @@
-package com.learning.ay.basic.designpattern.observer;
+package com.learning.ay.designpatern.observer;
 
 public class CallingMethod {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.learning.ay.basic.designpattern.decorator;
+package com.learning.ay.designpatern.decorator;
 
 public class MainMethod {
     public static void main(String[] args) {

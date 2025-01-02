@@ -1,4 +1,4 @@
-package com.learning.ay.basic.designpattern.decorator;
+package com.learning.ay.designpatern.decorator;
 
 public class SuperCar extends CarDecorator {
     public SuperCar(Car car) {
