@@ -6,7 +6,7 @@ public class SortingTechnique {
     public static void main(String[] args) {
         //selectionSort();
         //bubbleSort();
-        insertionSort();
+        insertionSortAnotherApproach();
     }
 
     /*
@@ -17,18 +17,35 @@ public class SortingTechnique {
         Insert the key in its correct position.
         Repeat for all remaining elements.*/
     private static void insertionSort() {
-        int[] numbs = {9, 1, 23, 2, 15, 7};
-        int n = numbs.length;
+        int[] arr = {9, 1, 23, 2, 15, 7};
+        int n = arr.length;
+        System.out.println(Arrays.toString(arr));
         for (int i = 1; i < n; i++) {
-            int key = numbs[i];
+            int key = arr[i];
             int j = i - 1;
             // Move elements of arr[0..i-1] that are greater than key to one position ahead
-            while (j >= 0 && numbs[j] > key) {
-                numbs[j + 1] = numbs[j];
+            while (j >= 0 && arr[j] > key) {
+                arr[j + 1] = arr[j];
                 j--;
             }
-            numbs[j + 1] = key;
+            arr[j + 1] = key;
+            System.out.println(Arrays.toString(arr));
         }
+    }
+
+    private static void insertionSortAnotherApproach() {
+        int[] arr = {9, 1, 23, 2, 15, 7};
+        int n = arr.length;
+        for (int i = 1; i <= n - 1; i++) {
+            int j = i;
+            while (j > 0 && arr[j - 1] > arr[j]) {
+                int temp = arr[j - 1];
+                arr[j-1] = arr[j];
+                arr[j] = temp;
+                j--;
+            }
+        }
+        System.out.println(Arrays.toString(arr));
     }
 
     /*
@@ -38,18 +55,18 @@ public class SortingTechnique {
         2. Swap them if they are in the wrong order.
         3. Repeat for the remaining unsorted part until no swaps are needed.*/
     private static void bubbleSort() {
-        int[] numbs = {9, 1, 23, 2, 15, 7};
-        int n = numbs.length;
+        int[] arr = {9, 1, 23, 2, 15, 7};
+        int n = arr.length;
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - i - 1; j++) {
-                if (numbs[j] > numbs[j + 1]) {
-                    int temp = numbs[j];
-                    numbs[j] = numbs[j + 1];
-                    numbs[j + 1] = temp;
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
                 }
             }
         }
-        System.out.println(Arrays.toString(numbs));
+        System.out.println(Arrays.toString(arr));
     }
 
     /*
@@ -60,19 +77,19 @@ public class SortingTechnique {
         3. Swap the smallest element found with the first element of the unsorted part.
         4. Repeat for the remaining unsorted portion of the array.*/
     private static void selectionSort() {
-        int[] numbs = {9, 1, 23, 2, 15, 7};
-        int n = numbs.length;
+        int[] arr = {9, 1, 23, 2, 15, 7};
+        int n = arr.length;
         for (int i = 0; i < n - 1; i++) {
             int mini = i;
             for (int j = i + 1; j < n; j++) {
-                if (numbs[j] < numbs[mini]) {
+                if (arr[j] < arr[mini]) {
                     mini = j;
                 }
             }
-            int temp = numbs[i];
-            numbs[i] = numbs[mini];
-            numbs[mini] = temp;
+            int temp = arr[i];
+            arr[i] = arr[mini];
+            arr[mini] = temp;
         }
-        System.out.println(Arrays.toString(numbs));
+        System.out.println(Arrays.toString(arr));
     }
 }

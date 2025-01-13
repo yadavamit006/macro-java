@@ -60,7 +60,11 @@ They all act the same because they are all composed annotations with @Component 
 
 @Controller : is a class level annotation, which tells the Spring Framework that this class serves as a controller in Spring MVC
 
-@Configuration : classes can contain bean definition methods annotated with @Bean:
+@Configuration : 
+1. classes can contain bean definition methods annotated with @Bean:
+2. Tags the class as a source of bean definitions for the application context.
+
+@EnableAutoConfiguration: Tells Spring Boot to start adding beans based on classpath settings, other beans, and various property settings.
 
 @SpringBootApplication = @Configuration + @EnableAutoConfiguration + @ComponentScan.
 it will automatically scan the components in the current package and its sub-packages. Thus it will register them in Spring’s Application Context, and allow us to inject beans using @Autowired.
