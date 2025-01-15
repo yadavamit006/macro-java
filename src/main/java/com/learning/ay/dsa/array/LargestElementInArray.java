@@ -17,7 +17,9 @@ public class LargestElementInArray {
         System.out.println(maxValue);
 
         //Option
-        Optional<Integer> max = Arrays.stream(arr).boxed().sorted((a, b) -> b.compareTo(a)).findFirst();
+        Optional<Integer> max = Arrays.stream(arr).boxed()
+                .sorted((a, b) -> b.compareTo(a))
+                .findFirst();
         max.ifPresent(System.out::println);
 
         //Option

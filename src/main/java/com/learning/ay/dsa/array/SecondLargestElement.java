@@ -10,7 +10,7 @@ public class SecondLargestElement {
     }
 
     private static void secondSmallest() {
-        int arr[] = {1, 4, 7, 7, 5, 2};
+        int[] arr = {1, 4, 7, 7, 5, 2};
         var smallest = arr[0];
         var secondSmallest = Integer.MAX_VALUE;
         for (int i = 0; i < arr.length; i++) {
