@@ -6,7 +6,7 @@ public class SortingTechnique {
     public static void main(String[] args) {
         //selectionSort();
         //bubbleSort();
-        insertionSortAnotherApproach();
+        insertionSort();
     }
 
     /*
@@ -19,7 +19,6 @@ public class SortingTechnique {
     private static void insertionSort() {
         int[] arr = {9, 1, 23, 2, 15, 7};
         int n = arr.length;
-        System.out.println(Arrays.toString(arr));
         for (int i = 1; i < n; i++) {
             int key = arr[i];
             int j = i - 1;
