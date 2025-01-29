@@ -1,4 +1,4 @@
-package com.learning.ay.dsa.array;
+package com.learning.ay.dsa.array.easy;
 
 import java.util.HashMap;
 import java.util.Map;

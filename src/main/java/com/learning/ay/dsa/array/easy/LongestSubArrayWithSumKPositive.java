@@ -1,4 +1,4 @@
-package com.learning.ay.dsa.array;
+package com.learning.ay.dsa.array.easy;
 
 public class LongestSubArrayWithSumKPositive {
     public static void main(String[] args) {
